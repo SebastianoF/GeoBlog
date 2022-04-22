@@ -1,0 +1,7 @@
+contextily==1.2.0
+geopandas==0.10.2
+jupyter==1.0.0
+keplergl==0.3.2
+matplotlib==3.5.1
+osmnx==1.1.2
+pandas==1.4.2
