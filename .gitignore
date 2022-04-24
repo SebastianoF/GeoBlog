@@ -23,6 +23,13 @@ __pycache__/
 # Emacs
 **/*~
 
+# Mac
+.DS_Store
+
+# tokens
+.jupyter_to_medium
+z_*
+
 # C extensions
 *.so
 
