@@ -1,7 +1,7 @@
 ---
 title: Setting up gpg authentication 
 subtitle: ...while keeping separate work and personal projects
-slug: gpg-authentication (Will be created automatically if not provided)
+slug: gpg-authentication
 tags: learning, tutorial, github
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1658597062185/DZf3xClmA.png?auto=compress
 domain: geods.hashnode.dev
