@@ -10,16 +10,13 @@ ignorePost: false
 ---
 
 
-# Setting up gpg authentication keeping separate work and personal projects
-
-
-This short blog post introduces the reader to the PGP key signatures, and suggests a way of creating a signature for your work user, for your private user and how to swap between them.
+This short blog post introduces the reader to the PGP key signatures, and suggests a way of creating a signature for your work user, for your private user and how to swap between them painlessly.
 
 ### PGP minimal intro
 
 A PGP key signature (Pretty Good Privacy) is a generic protocol that associates a signature to an encryption protocol, such as RSA, DSA or ElGamal. In this intro we will use RSA for git, but the method is generalisable for any.
 
-The signature consists of a fingerprint alongside with a username and user email. The fingerprint is a mini public key that authenticates the author of an exchange of keys.
+The signature consists of a fingerprint alongside with a username and user email. The fingerprint is a "mini" public key that authenticates the author of an exchange of keys.
 
 The owner of the signature will be able to sign files, documents, and in particular to sign commits via PGP protocol. In the normal workflow each time you are signing a document or git commit, the CLI will ask you for your passphrase to authenticate you. We will see at the end that it is possible to cache the passphrase, which is recommended only when you are the only person accessing the machine where the passphrase is cached.
 
@@ -27,7 +24,7 @@ The owner of the signature will be able to sign files, documents, and in particu
 ## Requirements
 
 - you are familiar with git command line and gitlab / github interface.
-- you installed the gpg command line interface ([Mac](https://formulae.brew.sh/formula/gnupg), [Linux](https://www.poftut.com/install-use-gpg-encrytion-linux-order-encrypt-decrypt-files-folder/) or PowerShell - Windows). GPG stands for Gnu Privacy Guard and implements the OpenPGP standard as defined by RFC4880.
+- you installed the gpg command line interface ([Mac](https://formulae.brew.sh/formula/gnupg), [Linux](https://www.poftut.com/install-use-gpg-encrytion-linux-order-encrypt-decrypt-files-folder/) or PowerShell - Windows). GPG stands for Gnu Privacy Guard and implements the OpenPGP standard as defined by RFC4880. It is easy to confuse it with PGP!
 
 
 ## Create and add a PGP key signature to github or gitlab
