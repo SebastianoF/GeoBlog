@@ -102,6 +102,9 @@ default-cache-ttl 34560000
 maximum-cache-ttl 34560000
 ```
 
+
+![key-and-nib](https://cdn.hashnode.com/res/hashnode/image/upload/v1658672213186/qmXG2rEgH.png?auto=compress)
+
 ## Appendix 0: list key creation
 
 
