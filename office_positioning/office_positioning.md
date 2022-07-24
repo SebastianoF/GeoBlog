@@ -237,7 +237,7 @@ display(map_3)
 
 **NOTE:** here, and from here downwards, we will not show the output of the print statements. Try out the code!
 
-![map3_london_trajectories](https://cdn.hashnode.com/res/hashnode/image/upload/v1658649255230/DhFiblx_X.png?auto=compress)
+![map3-london-trajectories](https://cdn.hashnode.com/res/hashnode/image/upload/v1658649255230/DhFiblx_X.png?auto=compress)
 
 As noted before, many of the workplaces and residences have the same coordinates and are overlapping on the map. Also in the dataset reduced to the boundaries of London residences and offices are overlapping, but outside the boundary, as expected, there are only residences.
 
@@ -345,7 +345,7 @@ $$
 d = \sin^2 \left(\frac{\Delta \text{lat}}{2} \right) + \cos(\text{lat1}) \cos(\text{lat2})  \sin^2\left(\frac{\Delta \text{lon}}{2}\right)~,
 $$
 
-and \( \Delta \text{lat} = \text{lat1} - \text{lat2} \), \( \Delta \text{lon} = \text{lon1} - \text{lon2} \), and \( R \) is the hearth's radius.
+and $$\Delta \text{lat} = \text{lat1} - \text{lat2}$$, $$\Delta \text{lon} = \text{lon1} - \text{lon2}$$, and $$R$$ is the hearth's radius.
 
 The formula for the bearing, as the angle formed by the geodesics between the north pole and (lng1, lat1), and the geodesic between (lng1, lat1) and (lng2, lat2) is, in radiants:
 
