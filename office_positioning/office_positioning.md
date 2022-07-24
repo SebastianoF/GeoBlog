@@ -12,6 +12,31 @@ ignorePost: false
 
 *This article was first published: 24 April 2022 on [medium](https://medium.com/@sebastianof/how-well-positioned-is-your-office-8517256c497e). The version here provided on [geods.hashnode.dev](geods.hashnode.dev) is the maintained one.*
 
+-------------
+
+### Note on formatting on hashnode, for the hashnode readers:
+
+This article is written on github and directly imported on [hashnode](https://geods.hashnode.dev/office-positioning) via its very handy github plugin. It seems that there are some issue in the formatting, as in the links, all the underscore are prepended with a backslash. I'm currently trying to understand how to solve the issue, and I already contacted the support from the hashnode team for help.
+
+For example the link:
+
+```bash
+[https://github.com/SebastianoF/GeoBlog/blob/master/office_positioning/office_positioning.md](https://github.com/SebastianoF/GeoBlog/blob/master/office_positioning/office_positioning.md)
+```
+
+is formatted as:
+
+[https://github.com/SebastianoF/GeoBlog/blob/master/office_positioning/office_positioning.md](https://github.com/SebastianoF/GeoBlog/blob/master/office_positioning/office_positioning.md)
+
+Which is broken due to the backslash prepended to the underscores.
+
+Also the LaTeX formaulae are not correctly formatted on this page, but they are well formatted on the github page of the link above.
+
+**In the meantime** these problems are addressed, to see the article with images and with latex formatting, please use the link above.
+
+-------------
+
+### Article
 
 Have you ever wondered if your office has the ideal location in respect to your house and your colleague's houses? Imagine to discover that not only you, but also all your colleagues are located South of your office. How much time and money would all you and your colleague save if the office were to be relocated closer to where everyone lives?
 
@@ -336,16 +361,16 @@ There are multiple ways to achieve this result, such as using one of the many py
 Given two points (lng1, lat1) and (lng2, lat2), the Haversine formula (geodesic distance on the sphere) is given by:
 
 $$
-\mathcal{H} = 2 * R * \arcsin\left(\sqrt{d}~\right)~,
+\mathcal{H} = 2 * R * \arcsin\left(\sqrt{d}\right)
 $$
 
 where
 
 $$
-d = \sin^2 \left(\frac{\Delta \text{lat}}{2} \right) + \cos(\text{lat1}) \cos(\text{lat2})  \sin^2\left(\frac{\Delta \text{lon}}{2}\right)~,
+d = \sin^2 \left(\frac{\Delta \text{lat}}{2} \right) + \cos(\text{lat1}) \cos(\text{lat2})  \sin^2\left(\frac{\Delta \text{lon}}{2}\right)
 $$
 
-and $\Delta \text{lat} = \text{lat1} - \text{lat2}$, $\Delta \text{lon} = \text{lon1} - \text{lon2}$, and $$R$$ is the hearth's radius.
+and $\Delta \text{lat} = \text{lat1} - \text{lat2}$, $\Delta \text{lon} = \text{lon1} - \text{lon2}$, and $R$ is the hearth's radius.
 
 The formula for the bearing, as the angle formed by the geodesics between the north pole and (lng1, lat1), and the geodesic between (lng1, lat1) and (lng2, lat2) is, in radiants:
 
