@@ -28,7 +28,7 @@ In this blog post we explore some simple techniques from geospatial data science
 8. Can we do better?
 
 
-**Source** [https://github.com/SebastianoF/GeoBlog/tree/master/office_positioning](https://github.com/SebastianoF/GeoBlog/tree/master/office_positioning)
+**Source** [https://github.com/SebastianoF/GeoBlog](https://github.com/SebastianoF/GeoBlog/tree/master/office_positioning)
 
 ## 1. Problem statement
 
@@ -103,8 +103,6 @@ df_commuter.head()
 ```
 
 ![header0-commuter](https://cdn.hashnode.com/res/hashnode/image/upload/v1658607781882/BRclpOr_4.png?auto=compress)
-
-test
 
 Throughout the tutorial we will be using the library [Kepler Gl](https://kepler.gl/), starting with a preliminary look at the data we just downloaded:
 
