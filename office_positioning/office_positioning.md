@@ -102,7 +102,7 @@ df_commuter = pd.read_csv("https://github.com/uber-web/kepler.gl-data/raw/master
 df_commuter.head()
 ```
 
-![header0_commuter](https://cdn.hashnode.com/res/hashnode/image/upload/v1658607781882/BRclpOr_4.png?auto=compress)
+![header0-commuter](https://cdn.hashnode.com/res/hashnode/image/upload/v1658607781882/BRclpOr_4.png?auto=compress)
 
 Throughout the tutorial we will be using the library [Kepler Gl](https://kepler.gl/), starting with a preliminary look at the data we just downloaded:
 
@@ -122,7 +122,7 @@ map_1 = KeplerGl(data={'commuters': df_commuter}, config=config, height=800)
 display(map_1)
 ```
 
-![map1_kepler_commuters_point](https://cdn.hashnode.com/res/hashnode/image/upload/v1658608477791/8S1Pj8wmt.png?auto=compress)
+![map1-kepler-commuters-point](https://cdn.hashnode.com/res/hashnode/image/upload/v1658608477791/8S1Pj8wmt.png?auto=compress)
 
 At this point, you are invited to **create the map on your own Jupyter notebook**, to look into Kepler GL. This tool is developed by Uber, and if you have not used it before it is worth spending some time playing around with layers, colours and filters, and changing the map tiles (dark, light, satellite, etc…).
 
@@ -169,7 +169,7 @@ gdf.head()
 
 ```
 
-![header1_osmnx](https://cdn.hashnode.com/res/hashnode/image/upload/v1658611137244/bjWPhPDz7.png?auto=compress)
+![header1-osmnx](https://cdn.hashnode.com/res/hashnode/image/upload/v1658611137244/bjWPhPDz7.png?auto=compress)
 
 Before continuing, it would be good to visualise the polygons we just downloaded. There are multiple ways to do this. For example we can use *contextility* as a basemap and use the embedded method plot of a geopandas dataframe.
 
@@ -181,7 +181,7 @@ cx.add_basemap(ax)
 
 ```
 
-![map2_static_contextility_example](https://cdn.hashnode.com/res/hashnode/image/upload/v1658648427079/gpCcunHCA.png?auto=compress)
+![map2-static-contextility-example](https://cdn.hashnode.com/res/hashnode/image/upload/v1658648427079/gpCcunHCA.png?auto=compress)
 
 We can also have a navigable map to visualise the same dataset, again using Kepler GL.
 
@@ -197,7 +197,7 @@ display(map_2)
 
 ```
 
-![map2_kepler_city_outline](https://cdn.hashnode.com/res/hashnode/image/upload/v1658649134288/PQ43Ou1vw.png?auto=compress)
+![map2-kepler-city-outline](https://cdn.hashnode.com/res/hashnode/image/upload/v1658649134288/PQ43Ou1vw.png?auto=compress)
 
 To narrow the commuter dataset to only the offices within the boundary of London, first we cast `df_commuter` into a geopandas DataFrame with the geometry column having for each entry the shapely point of the workplace coordinate.
 
@@ -335,7 +335,9 @@ There are multiple ways to achieve this result, such as using one of the many py
 
 Given two points (lng1, lat1) and (lng2, lat2), the Haversine formula (geodesic distance on the sphere) is given by:
 
-$$\mathcal{H} = 2 * R * \arcsin\left(\sqrt{d}~\right)~,$$
+$$
+\mathcal{H} = 2 * R * \arcsin\left(\sqrt{d}~\right)~,
+$$
 
 where
 
@@ -343,7 +345,7 @@ $$
 d = \sin^2 \left(\frac{\Delta \text{lat}}{2} \right) + \cos(\text{lat1}) \cos(\text{lat2})  \sin^2\left(\frac{\Delta \text{lon}}{2}\right)~,
 $$
 
-and $$\Delta \text{lat} = \text{lat1} - \text{lat2}$$, $$\Delta \text{lon} = \text{lon1} - \text{lon2}$$, and $$R$$ is the hearth's radius.
+and $\Delta \text{lat} = \text{lat1} - \text{lat2}$, $\Delta \text{lon} = \text{lon1} - \text{lon2}$, and $$R$$ is the hearth's radius.
 
 The formula for the bearing, as the angle formed by the geodesics between the north pole and (lng1, lat1), and the geodesic between (lng1, lat1) and (lng2, lat2) is, in radiants:
 
