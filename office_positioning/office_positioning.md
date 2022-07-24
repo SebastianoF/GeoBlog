@@ -10,7 +10,7 @@ ignorePost: false
 ---
 
 
-*This article was first published: 24 April 2022 on [medium](https://medium.com/@sebastianof/how-well-positioned-is-your-office-8517256c497e). The version here provided on [geods.hashnode.dev](geods.hashnode.dev) is the maintained one.*
+*This article was first published: 24 April 2022 on [medium](https://medium.com/@sebastianof/how-well-positioned-is-your-office-8517256c497e). The version here provided on [geods.hashnode.dev](https://geods.hashnode.dev) is the maintained one.*
 
 -------------
 
