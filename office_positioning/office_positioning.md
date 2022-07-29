@@ -1,4 +1,4 @@
----
+<!-- ---
 title: How well positioned is your office?
 subtitle: Time to question your workplace location
 slug: office-positioning
@@ -8,54 +8,41 @@ domain: geods.hashnode.dev
 publishAs: SebastianoF 
 ignorePost: false
 ---
+Gave up on this due to issues mentioned in the article medium to hashnode transition,
+as well as documented on 
+https://stackoverflow.com/questions/73099314/how-to-prevent-hashnode-dev-github-integration-from-automatically-escaping-under
+ -->
+
+
+![cover](https://cdn.hashnode.com/res/hashnode/image/upload/v1658607085481/7KbyixY8x.png?auto=compress)
+
+# How well positioned is your office?
+
+## Time to question your workplace location
 
 
 *This article was first published: 24 April 2022 on [medium](https://medium.com/@sebastianof/how-well-positioned-is-your-office-8517256c497e). The version here provided on [geods.hashnode.dev](https://geods.hashnode.dev) is the maintained one.*
 
 -------------
 
-### Note on formatting on hashnode, for the hashnode readers:
-
-This article is written on github and directly imported on [hashnode](https://geods.hashnode.dev/office-positioning) via its very handy github plugin. It seems that there are some issue in the formatting, as in the links, all the underscore are prepended with a backslash. I'm currently trying to understand how to solve the issue, and I already contacted the support from the hashnode team for help.
-
-For example the link:
-
-```bash
-[https://github.com/SebastianoF/GeoBlog/blob/master/office_positioning/office_positioning.md](https://github.com/SebastianoF/GeoBlog/blob/master/office_positioning/office_positioning.md)
-```
-
-is formatted as:
-
-[https://github.com/SebastianoF/GeoBlog/blob/master/office_positioning/office_positioning.md](https://github.com/SebastianoF/GeoBlog/blob/master/office_positioning/office_positioning.md)
-
-Which is broken due to the backslash prepended to the underscores.
-
-Also the LaTeX formaulae are not correctly formatted on this page, but they are well formatted on the github page of the link above.
-
-**In the meantime** these problems are addressed, to see the article with images and with latex formatting, please use the link above.
-
--------------
-
-### Article
-
 Have you ever wondered if your office has the ideal location in respect to your house and your colleague's houses? Imagine to discover that not only you, but also all your colleagues are located South of your office. How much time and money would all you and your colleague save if the office were to be relocated closer to where everyone lives?
 
-In this blog post we explore some simple techniques from geospatial data science to investigate an instance of this problem and to visualise the situation on an interactive map. You can setup your own Jupyter Notebook and python environment, and copy paste the code, or directly clone the repository from https://github.com/SebastianoF/GeoBlog.
+In this blog post we explore some simple techniques from geospatial data science to investigate an instance of this problem and to visualise the situation on an interactive map. You can setup your own Jupyter Notebook and python environment, and copy paste the code, or directly clone the repository from [https://github.com/SebastianoF/GeoBlog](https://github.com/SebastianoF/GeoBlog/tree/master/office_positioning).
 
-#### Content
-1. Problem statement
-2. Setup and requirements
-3. Download and visualise the dataset
-4. Narrow down the dataset to the city of London
-5. Select the office location
-6. Compute bearing and distance from the selected office to all the commuters residences
-7. Visualise the results in a radar-histogram plot
-8. Can we do better?
+## Content
+1. [Problem statement](#1-problem-statement)
+2. [Setup and requirements](#2-setup-and-requirements)
+3. [Download and visualise the dataset](#3-download-and-visualise)
+4. [Narrow down the dataset to the city of London](#4-narrow-down-dataset)
+5. [Select the office location](#5-select-office-location)
+6. [Compute bearing and distance from the selected office to all the commuters residences](#6-compute-bearing-distance)
+7. [Visualise the results in a radar-histogram plot](#7-visualise-results)
+8. [Can we do better?](#8-can-we-do-better)
 
 
-**Source** [https://github.com/SebastianoF/GeoBlog](https://github.com/SebastianoF/GeoBlog/tree/master/office_positioning)
+**Source** [https://github.com/SebastianoF/GeoBlog/office_positioning](https://github.com/SebastianoF/GeoBlog/tree/master/office_positioning)
 
-## 1. Problem statement
+## <a id="1-problem-statement"></a> 1. Problem statement  ##
 
 [Geospatial data science](https://geographicdata.science/book/intro.html) is the branch of data science transforming geospatial data into valuable insights through the application of the scientific method. In this tutorial we use its principles to find the answer to a very simple question:
 
@@ -73,7 +60,7 @@ You will be using the following components:
 - osmnx to narrow down the dataset's offices located within the borders of London.
 - A handful of Python functions to compute distances and angles on the surface of a sphere and to visualise some results.
 
-## 2. Setup and requirements
+## <a id="2-setup-and-requirements"></a> 2. Setup and requirements ## 
 
 There are several options to create a python 3.9 environment, the code below uses conda:
 
@@ -103,7 +90,7 @@ pip install -r requirements.txt
 
 Now all should be ready and set up to go!
 
-## 3. Download and visualise the dataset
+## <a id="3-download-and-visualise"></a> 3. Download and visualise the dataset ##
 
 After importing the required library with…
 
@@ -166,7 +153,7 @@ After changing the settings in the Kepler map, you can export them as a json `co
 If you are not following the code from the repo, or the configs from the `kepler_config.py` module are not imported, then the cells below will be loading the previous config file as its default.
 
 
-## 4. Narrow down the dataset to the city of London
+## <a id="4-narrow-down-dataset"></a> 4. Narrow down the dataset to the city of London ##
 
 Early stage explorations indicate that the dataset covers the whole of England and Wales. Also toggling the layers, or making the workplace radii smaller and selecting a different colorscale than the residences, we can see that in many cases some **some workplaces are coincident with the residences**. For the moment, and for the goals of this post, this problem is of no concern.
 
@@ -266,7 +253,7 @@ display(map_3)
 
 As noted before, many of the workplaces and residences have the same coordinates and are overlapping on the map. Also in the dataset reduced to the boundaries of London residences and offices are overlapping, but outside the boundary, as expected, there are only residences.
 
-## 5. Select the office location
+## <a id="5-select-office-location"></a>  5. Select the office location
 
 Now the goal is to select a single office of interest (or a group of nearby offices), and to examine its location in respect to the location of the employees. The functionality of drawing polygons provided by Kepler Gl comes in handy for this purpose.
 
@@ -352,7 +339,7 @@ print(f"Commuters to Albert Road office {len(df_commuters_albert_road)} ({100 * 
 ![map4_office_trajectories](https://cdn.hashnode.com/res/hashnode/image/upload/v1658652547469/a-PDPRcnT.png?auto=compress)
 
 
-## 6. Compute bearing and distance from the selected office to all the commuters residences
+## <a id="6-compute-bearing-distance"></a>  6. Compute bearing and distance from the selected office to all the commuters residences ##
 
 Now that we have the dataset of commuters to two custom selected offices in London, we want to compute the bearing and distance from the office to each employees residence.
 
@@ -428,7 +415,7 @@ df_commuters_albert_road = add_bearing_deg_and_distance_km(df_commuters_albert_r
 df_commuters_st_luke_office.head()
 ```
 
-## 7. Visualise the results in a radar-histogram plot
+## <a id="7-visualise-results"></a> 7. Visualise the results in a radar-histogram plot ##
 
 For distance and bearing visualisation, a circular histogram would do what we need.
 
@@ -579,7 +566,7 @@ From the graphs below we can see that the office in Saint Luke is reasonably wel
 The same can not be said for the office located in Albert road office, whose employees should consider relocating to an office further North-East.
 
 
-## 8. Can we do better?
+## <a id="8-can-we-do-better"></a> 8. Can we do better?
 
 From the question *"Is your company office optimally located in respect to the position of its employees?"*, we developed a small example showing the geospatial data science capabilities to visualise the employees distribution around in respect to the position of their office. In doing so we showed how to download city boundaries from the OSM python API, how to intersect points in polygons, and how to visualise geospatial data with Keplerl GL.
 
