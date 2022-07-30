@@ -86,7 +86,7 @@ This post is also the opportunity to document a couple of issues found (29 July 
 
     This happens also when linking images. I raised this issue on [stackoverflow](https://stackoverflow.com/questions/73099314/how-to-prevent-hashnode-dev-github-integration-from-automatically-escaping-under) as well and communicated it to the hashnode development team. Hopefully it will be only a matter of time before the bug will be fixed.
 
-2. LaTeX code is also not formatted, remaining raw code across repos. 
+2. LaTeX code is also not formatted, remaining raw across the article. 
     For example, I'm adding below the formula for the bearing:
 
     $$
