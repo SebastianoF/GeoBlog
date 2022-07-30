@@ -14,7 +14,7 @@ This post documents the transition of my newly born blog dedicated to geospatal 
 
 ## Content
 1. [Pros and Cons](#pros-and-cons)
-    - [Medium pros](#medium)
+    - [Medium](#medium)
     - [Hashnode](#hashnode)
 2. [Current issues with Hashnode](#hashnode-issues)
 3. [Workflow](#workflows)
@@ -129,15 +129,15 @@ With hashnode I found two different workflows, depending on if I want to source 
 1. Create, revise and improve content on a jupyter notebook in a versioned controlled repository on github, with images stored in a folder in the same repo, and latex formulae saved in markdown in the same place.
 2. Automatically convert the Jupyter notebook to markdown with [nbconvert](https://nbconvert.readthedocs.io/en/latest/).
 
-- **With github integration:**
+**With github integration:**
 
-    3. Add the [hashnode header](https://github.com/Hashnode/Hashnode-source-from-github-template) to the markdown file, then commit, and merge to master, as you would do anyway with github.
-    5. Re-read, find issues on hashnode and correct directly on github (look at the log if something went wrong in the uploading).
+3. Add the [hashnode header](https://github.com/Hashnode/Hashnode-source-from-github-template) to the markdown file, then commit, and merge to master, as you would do anyway with github.
+5. Re-read, find issues on hashnode and correct directly on github (look at the log if something went wrong in the uploading).
 
-- **Without github integration:**
+**Without github integration:**
 
-    3. Create a new article on hashnode and copy paste the created markdown.
-    4. Re-read, find issues on hashnode, correct directly on github (look at the log if something went wrong in the uploading), and re-do copy paste of the full file from the repository to hashnode.
+3. Create a new article on hashnode and copy paste the created markdown.
+4. Re-read, find issues on hashnode, correct directly on github (look at the log if something went wrong in the uploading), and re-do copy paste of the full file from the repository to hashnode.
 
 ## <a id="alternatives"></a> 4. Alternatives
 
