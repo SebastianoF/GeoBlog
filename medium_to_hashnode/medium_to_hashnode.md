@@ -88,6 +88,7 @@ This post is also the opportunity to document a couple of issues found (29 July 
 
 2. LaTeX code is also not formatted, remaining raw code across repos. 
     For example, I'm adding below the formula for the bearing:
+
     $$
     \mathcal{B} = \arctan\left( 
         \frac{
@@ -97,7 +98,9 @@ This post is also the opportunity to document a couple of issues found (29 July 
         } 
     \right)
     $$
+    
     And here the integral of the Gaussian:
+    
     $$
     \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} e^{-\frac{1}{2}\xi^2} \, d\xi = 1
     $$
