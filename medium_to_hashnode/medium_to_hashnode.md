@@ -3,7 +3,7 @@ title: Medium to Hashnode
 subtitle: Pros, cons and workflows
 slug: medium-to-hasgnode
 tags: learning-journey, programming-blogs, best-of-hashnode
-cover: 
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1659175564353/vBBsXyzWA.png?auto=compress
 domain: geods.hashnode.dev
 publishAs: SebastianoF 
 ignorePost: false
