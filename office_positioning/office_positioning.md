@@ -348,7 +348,7 @@ There are multiple ways to achieve this result, such as using one of the many py
 Given two points (lng1, lat1) and (lng2, lat2), the Haversine formula (geodesic distance on the sphere) is given by:
 
 $$
-\mathcal{H} = 2 * R * \arcsin\left(\sqrt{d}\right)
+\mathcal{H} = 2 R \arcsin\left(\sqrt{d}\right)
 $$
 
 where
