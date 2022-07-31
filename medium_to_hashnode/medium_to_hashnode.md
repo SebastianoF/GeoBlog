@@ -71,7 +71,7 @@ The two reasons why hashnode is so attractive for tech writing are the possibili
 
     - **Not as minimalistic:** compared to the now iconic Medium UI, the dashboard of hashnode looks a crammed and still has to find its personality. Zooming out and going dark mode helps, though there is sometimes too much information in one go for my taste.
 
-    - **Too many emoji:** emoji are like swearing 🤬, they are cool 🆒  and funny 🤣  only if not abused 🔫  or misplaced 🚽. An excessive 📈  amount would infantilise 👶  the reader 👓, visually saturate the page 📃, and divert the attention ㊟ from the content 🔃 (yes, you got me 🥇, I am showing you an example here 🤣🤣🤣🤣🤣, how funny 🤪). Also there is something odd in having 10 different ways of showing appreciation to an article (unlike the single black-and-white claps of Medium). A single option encourages the reader to give kudos, 10 options to chose from so far steered me away from upvoting each time.
+    - **Too many emoji:** emoji are like swearing 🤬, they are cool 🆒  and funny 🤣  only if not abused 🔫  or misplaced 🚽. An excessive 📈  amount would infantilise 👶  the reader 👓, visually saturate the page 📃, and divert the attention ㊟ from the content 🔃 (yes, you got me 🥇, I am showing you an example here 🤣🤣🤣🤣🤣, how funny 🤪). Also there is something odd in having 10 different ways of showing appreciation to an article (unlike the single black-and-white claps of Medium). A single option encourages the reader to give kudos, 10 options to chose from so far steered me away from upvoting.
 
 ## <a id="hashnode-issues"></a> 2. Current issues with Hashnode
 
@@ -106,7 +106,7 @@ This post is also the opportunity to document a couple of issues found (29 July 
     $$
 
 
-To see how the correct formatting should look like (admitting that the bug had not been fixed in the meantime), the source of this article can be found [here](https://github.com/SebastianoF/GeoBlog/blob/master/office_positioning/office_positioning.md) (note: you may need to remove the underscores manually from the link opening in a new page).
+To see how the correct formatting should look like (admitting that the bug had not been fixed in the meantime), the source of this article can be found [here](https://github.com/SebastianoF/GeoBlog/blob/master/office_positioning/office_positioning.md) (NOTE: you will have to remove the slash before each underscores manually from the url after clicking on the link).
 
 
 ## <a id="workflows"></a> 3. Workflows ##
