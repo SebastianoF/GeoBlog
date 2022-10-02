@@ -10,6 +10,7 @@ Simplifying the model and selecting the optimal attributes to the geometries inv
 
 There are in fact a series of experimental or at least intuitive facts about polygons, and some slightly less intuitive, such as how to measure the distance between two polygons on a surface (and on a curved surface), or how to measure the overlap of two polygons, or the difference between two polygons aimed at modelling the same object. In wanting to keep a pragmatic approach to the matter, we will omit the even less intuitive measures entailing the pathological cases of polygons, such as fractals and limits of curves in general, that rarely arise in the practice of geospatial data science.
 
+#### [Github link](https://github.com/SebastianoF/GeoBlog/tree/master/polygons_part_1).
 
 # Content
 
@@ -29,6 +30,7 @@ There are in fact a series of experimental or at least intuitive facts about pol
   - Creating random polygons
   - Floating polygons
   - Polygons deformed by a vector field
+
 
 ## <a id="0-env-set-up"></a> 0. Setting up the environment  ##
 
@@ -117,7 +119,7 @@ map_1 = KeplerGl(data=deepcopy({"roi": gdf_roi}), config=config_map1, height=800
 display(map_1)
 ```
 
-![map1.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664747123845/s3zo6dGMZ.png align="left")
+![map1.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664747123845/s3zo6dGMZ.png)
 
 The copy pasted geometry from the kepler app is a dictionary with a type and a list of coordinates following a conventional GeoJSON object. GeoJSON is a format for encoding data about geographic features using JavaScript Object Notation (json), established in 2015.
 
@@ -220,7 +222,7 @@ map_2 = KeplerGl(
 map_2
 ```
 
-![map2.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664747883743/XYlR4UlQh.png align="left")
+![map2.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664747883743/XYlR4UlQh.png)
 
 
 ```python
@@ -229,7 +231,7 @@ gdf_genova["areas (Km2)"] = gdf_genova.to_crs({'proj':'cea'}).area/ 10**6
 gdf_genova[["name", "areas (Km2)"]]  # Table 1
 ```
 
-![table1.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664748367897/oLPIjptp5.png align="center")
+![table1.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664748367897/oLPIjptp5.png)
 
 
 ## <a id="1.2-nearby"></a> 1.2 Polygons intersecting water and land... nearby!  ##
@@ -294,7 +296,7 @@ if True:
 map_3
 ```
 
-![map3.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664750935229/MquysB4Ui.png align="left")
+![map3.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664750935229/MquysB4Ui.png)
 
 
 Now we can consider the three "nearby" operations. For simplicity all the three operations we are interested in are embedded in a class.
@@ -364,7 +366,7 @@ map_4 = KeplerGl(
 map_4
 ```
 
-![map4.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664750960846/GYpk1j8mi.png align="left")
+![map4.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664750960846/GYpk1j8mi.png)
 
 In the picture above the bounding box, buffer and convex hull were added to the selected geometry, but the land and sea was not computed for these new polygons. This is left for the reader for practice. For example the water and land within the bounding box should look like the figure below:
 
@@ -380,7 +382,7 @@ map_5 = KeplerGl(
 map_5
 ```
 
-![map5.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664750971489/mL4YdLJN5.png align="left")
+![map5.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664750971489/mL4YdLJN5.png)
 
 ## <a id="1.3-country-intersect"></a> 1.3 Which country intersects this polygon?  ##
 
@@ -443,7 +445,7 @@ gdf_intersection_countries = gdf_countries[gdf_countries.intersects(sh_roi)].res
 gdf_intersection_countries[["name", 'areas (Km2)']].head(10)  # Table 2
 ```
 
-![table2.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664751084233/m9_s9YfCb.png align="left")
+![table2.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664751084233/m9_s9YfCb.png)
 
 Left to the reader is to add a column with the information of the the percentage of the area covered by the selected roi over each country (e.g. Myanmar will be 100% covered by the ROI. What about China?).
 
@@ -514,7 +516,7 @@ map_7 = KeplerGl(data=deepcopy({"rois": gdf_countries.to_crs('4326')}), height=8
 display(map_7)
 ```
 
-![map7.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664751005159/CfkLYSeZw.png align="left")
+![map7.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664751005159/CfkLYSeZw.png)
 
 NOTE: the artefacts that you can see in the map above are caused by polygons crossing the antimeridian. This topic will be discussed in the next blog post of the polygon series "reference systems for polygons".
 
@@ -565,7 +567,7 @@ map_8 = KeplerGl(
 display(map_8)
 ```
 
-![map8.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664751038683/auG1QGai6.png align="left")
+![map8.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664751038683/auG1QGai6.png)
 
 ### Dice's Score
 After Lee R. Dice, the Dice's score measures the area of the overlap between two polygons normalised to the sum of the individual areas of the two polygons. Therefore if the polygon are perfectly congruent, then the dice equals 1, if there is no intersection between the two elements, the measure is zero.
@@ -693,7 +695,7 @@ pd.DataFrame(
 )  # Table 3
 ```
 
-![table3.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664751067673/r1YqYKfVA.png align="left")
+![table3.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664751067673/r1YqYKfVA.png)
 
 #### Note 1:
 
