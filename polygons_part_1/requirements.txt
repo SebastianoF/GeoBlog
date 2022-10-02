@@ -1,0 +1,7 @@
+geopandas==0.11.1
+geopy==2.2.0
+jupyter==1.0.0
+keplergl==0.3.2
+matplotlib==3.6.0
+osmnx==1.2.2
+shapely==1.8.4
