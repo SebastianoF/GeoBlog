@@ -414,7 +414,7 @@ map_6 = KeplerGl(data=deepcopy({"roi": gdf_roi}), height=800, config=config_map6
 display(map_6)
 ```
 
-![map6.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664750982378/HpGYDbORU.png align="left")
+![map6.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664750982378/HpGYDbORU.png)
 
 
 ```python
@@ -429,7 +429,7 @@ ax.axis('off')  # map_naturalearth
 
 ```
 
-![map_naturalearth.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664751564546/S6Vsj0HXQ.png align="left")
+![map_naturalearth.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664751564546/S6Vsj0HXQ.png)
 
 ```python
 dict_roi = {"type":"Polygon","coordinates":[[[95.27405518168942,28.464895473156595],[88.19328456832459,26.69900877882346],[87.15109322263424,21.154320639876016],[91.6876908450501,14.831845554981104],[98.52323996531177,13.52423467533735],[103.97941818686449,15.157545455928199],[104.43920848643478,20.868173454079436],[104.0713762467781,26.45228108415989],[95.27405518168942,28.464895473156595]]]}
