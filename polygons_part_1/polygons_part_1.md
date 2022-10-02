@@ -13,14 +13,14 @@ There are in fact a series of experimental or at least intuitive facts about pol
 
 # Content
 
-0. **Setting up the environment**
+0. [**Setting up the environment**](#0-env-set-up)
 
 1. **Definitions: intersections, operations and measurements of polygons**
-  - **Polygons intersecting water and land.**
-  - **...and with water and land nearby.**
-  - **Which country intersect this polygon?**
-  - **Distances between countries.**
-  - **Same country, different borders: how different are they?**
+  - [**Polygons intersecting water and land.**](#1.1-water-and-land)
+  - [**...and with water and land nearby.**](#1.2-nearby)
+  - [**Which country intersect this polygon?**](#1.3-country-intersect)
+  - [**Distances between countries.**](#1.4-distances)
+  - [**Same country, different borders: how different are they?**](#1.5-variability)
 2. Reference systems for polygons
   - Changing reference system
   - Polygons crossing the antimeridian
@@ -30,7 +30,7 @@ There are in fact a series of experimental or at least intuitive facts about pol
   - Floating polygons
   - Polygons deformed by a vector field
 
-## 0. Setting up the environment
+## <a id="0-env-set-up"></a> 0. Setting up the environment  ##
 
 Create a python 3.9 environment called `venv` and activate it. There are several options, the code below is to create an environment via virtualenv, as quicker than conda, and more than enough for these small experiments:
 ```
@@ -49,7 +49,7 @@ osmnx==1.2.2
 shapely==1.8.4
 ```
 
-## 1.1 Polygons intersecting water and land.
+## <a id="1.1-water-and-land"></a> 1.1 Polygons intersecting water and land.  ##
 
 Land and water on a map are typically modelled by polygons through the segmentation of the underlying geographical features. Given a polygon or a bounding box drawn on a map as input, the goal is to know want to know what are the polygons of land and water this polygon intersects, and, after trimming them to the given geometry, we want to measure the percentage of land respect to the percentage of water. For the example below we will use a polygon drawn around the city of Genova, Italy, (44.405551, 8.904023). 
 
@@ -116,6 +116,8 @@ except ImportError:
 map_1 = KeplerGl(data=deepcopy({"roi": gdf_roi}), config=config_map1, height=800)
 display(map_1)
 ```
+
+![map1.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664747123845/s3zo6dGMZ.png align="left")
 
 The copy pasted geometry from the kepler app is a dictionary with a type and a list of coordinates following a conventional GeoJSON object. GeoJSON is a format for encoding data about geographic features using JavaScript Object Notation (json), established in 2015.
 
@@ -218,6 +220,8 @@ map_2 = KeplerGl(
 map_2
 ```
 
+![map2.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664747883743/XYlR4UlQh.png align="left")
+
 
 ```python
 # Reproject to cylindrical equal area projectcion
@@ -225,7 +229,10 @@ gdf_genova["areas (Km2)"] = gdf_genova.to_crs({'proj':'cea'}).area/ 10**6
 gdf_genova[["name", "areas (Km2)"]]  # Table 1
 ```
 
-## 1.2 Polygons intersecting water and land... nearby!
+![table1.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664748367897/oLPIjptp5.png align="center")
+
+
+## <a id="1.2-nearby"></a> 1.2 Polygons intersecting water and land... nearby!  ##
 
 There are situations when the manually delineated region may not be as accurate as it is required. It may be required to get some information of the areas "nearby" as well. "Nearby" can have different definitions, and here we get three of them:
 1. Convex hull
@@ -286,6 +293,9 @@ if True:
     )
 map_3
 ```
+
+![map3.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664750935229/MquysB4Ui.png align="left")
+
 
 Now we can consider the three "nearby" operations. For simplicity all the three operations we are interested in are embedded in a class.
 
@@ -354,6 +364,8 @@ map_4 = KeplerGl(
 map_4
 ```
 
+![map4.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664750960846/GYpk1j8mi.png align="left")
+
 In the picture above the bounding box, buffer and convex hull were added to the selected geometry, but the land and sea was not computed for these new polygons. This is left for the reader for practice. For example the water and land within the bounding box should look like the figure below:
 
 
@@ -368,7 +380,9 @@ map_5 = KeplerGl(
 map_5
 ```
 
-## 1.3 Which country intersects this polygon?
+![map5.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664750971489/mL4YdLJN5.png align="left")
+
+## <a id="1.3-country-intersect"></a> 1.3 Which country intersects this polygon?  ##
 
 Imagine now to draw a polygon on the map with the goal of wanting to know a list with the names of all the countries intersecting it.
 
@@ -400,6 +414,8 @@ map_6 = KeplerGl(data=deepcopy({"roi": gdf_roi}), height=800, config=config_map6
 display(map_6)
 ```
 
+![map6.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664750982378/HpGYDbORU.png align="left")
+
 
 ```python
 import geopandas as gpd
@@ -413,6 +429,7 @@ ax.axis('off')  # map_naturalearth
 
 ```
 
+![map_naturalearth.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664751564546/S6Vsj0HXQ.png align="left")
 
 ```python
 dict_roi = {"type":"Polygon","coordinates":[[[95.27405518168942,28.464895473156595],[88.19328456832459,26.69900877882346],[87.15109322263424,21.154320639876016],[91.6876908450501,14.831845554981104],[98.52323996531177,13.52423467533735],[103.97941818686449,15.157545455928199],[104.43920848643478,20.868173454079436],[104.0713762467781,26.45228108415989],[95.27405518168942,28.464895473156595]]]}
@@ -426,9 +443,11 @@ gdf_intersection_countries = gdf_countries[gdf_countries.intersects(sh_roi)].res
 gdf_intersection_countries[["name", 'areas (Km2)']].head(10)  # Table 2
 ```
 
+![table2.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664751084233/m9_s9YfCb.png align="left")
+
 Left to the reader is to add a column with the information of the the percentage of the area covered by the selected roi over each country (e.g. Myanmar will be 100% covered by the ROI. What about China?).
 
-## 1.3 Distances between countries
+## <a id="1.4-distances"></a> 1.4 Distances between countries  ##
 
 Now let's say you have two polygons representing two countries. How to compute their distance in Km on the surface of the earth?
 
@@ -495,11 +514,13 @@ map_7 = KeplerGl(data=deepcopy({"rois": gdf_countries.to_crs('4326')}), height=8
 display(map_7)
 ```
 
+![map7.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664751005159/CfkLYSeZw.png align="left")
+
 NOTE: the artefacts that you can see in the map above are caused by polygons crossing the antimeridian. This topic will be discussed in the next blog post of the polygon series "reference systems for polygons".
 
 This section also confirmed numerically the importance of the quality of the segmentation in taking measurements, which lead us straight to the next (and last!) section of this first tutorial about polygons.
 
-## Same country, different borders: how different are they?
+## <a id="1.5-variability"></a> 1.5 Same country, different borders: how different are they?  ##
 
 The problem we want to address in this section is to quantify the differences between segmentations of the same region. As often happens in geospatial data science (and not only there) a ground truth is not available. Also, as in the case of natural phenomena, the true segmentation varies over time, and an approximation is all what we can get. Quantifying the differences between two shapes consists of reducing the dimensionality of the problem, from 2D to 1D. The methods here presented can be generalised from ND to 1D, which can happen in case altitude and time are taken into account in the segmentation process.
 
@@ -543,6 +564,8 @@ map_8 = KeplerGl(
 )
 display(map_8)
 ```
+
+![map8.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664751038683/auG1QGai6.png align="left")
 
 ### Dice's Score
 After Lee R. Dice, the Dice's score measures the area of the overlap between two polygons normalised to the sum of the individual areas of the two polygons. Therefore if the polygon are perfectly congruent, then the dice equals 1, if there is no intersection between the two elements, the measure is zero.
@@ -669,6 +692,8 @@ pd.DataFrame(
     index=meas
 )  # Table 3
 ```
+
+![table3.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1664751067673/r1YqYKfVA.png align="left")
 
 #### Note 1:
 
