@@ -1,5 +1,10 @@
 # GeoBlog
 
+**This repo is no longer maintained and contains the code companion to the blog posts that I wrote on medium and hashnode.** 
+
+**For the maintained version (based on quarto) please refer to [GeoDsBlog](https://github.com/SebastianoF/GeoDsBlog).**
+
+
 Personal Blog about geospatial data science. All the articles are also published in [hashnode](https://geods.hashnode.dev/).
 
 ## Blog posts
